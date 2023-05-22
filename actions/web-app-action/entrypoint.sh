@@ -38,10 +38,10 @@ webappInstall () {
   timeout 1200 sh -c "echo -n Verify ArogCD Connectivity! Please wait.; until curl -sfkI https://${ARGO_HOSTNAME} &>/dev/null; do echo -n .; sleep 1; done;echo Done!;"
   argocd login ${ARGO_HOSTNAME} --grpc-web --insecure --username ${ARGO_USER} --password ${ARGO_GET_SSM_SECRET} >/dev/null
   
-argocd repo add https://github.com/stackgenie/stackgenie-devops-apptest.git --username ${USER_GITHUB} --password ${API_TOKEN_GITHUB} --name sample   #follow step 10 and replace the repo name here
+argocd repo add https://github.com/aadilraza339/auto-depoly.git --username ${USER_GITHUB} --password ${API_TOKEN_GITHUB} --name sample   #follow step 10 and replace the repo name here
 
 argocd app create sample \
-  --repo https://github.com/stackgenie/stackgenie-devops-apptest.git \  #follow step 10 and replace the repo name here
+  --repo https://github.com/aadilraza339/auto-depoly.git \  #follow step 10 and replace the repo name here
   --revision dev \                                                      #Replace with the branch name
   --path . \
   --dest-namespace web-app \

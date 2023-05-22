@@ -5,10 +5,10 @@ name: AWS Infra Provision
 on:
   push:
     branches:
-    - <replace-with-your-branch>
+    - main
   pull_request:
     branches:
-    - <replace-with-branch-accordingly>
+    - main
 
 jobs:
   eks-flux:
@@ -23,22 +23,22 @@ jobs:
 
       ## Workspace Variable used for all steps
       ## Input values are 'dev or mgmt or prod'
-      WORKSPACE_ENV: ''
+      WORKSPACE_ENV: 'dev'
 
       ## Terraform Variables 
       ## Input values are 'apply or destroy'         
-      TF_VERBOSE: ''
+      TF_VERBOSE: 'apply'
 
       ## ArgoCD installation to EKS Cluster, bootstrap parameters.
       ##
-      ARGO_VERBOSE: ''               # Allowed values are 'install or uninstall'
-      DOMAIN_NAME: ''                # Route53 domain for hosted zone
-      ARGO_HOSTNAME: ''              # Hostname with domain FQDN eg: argocd.example.com.
+      ARGO_VERBOSE: 'install'               # Allowed values are 'install or uninstall'
+      DOMAIN_NAME: 'aadilraza.com'                # Route53 domain for hosted zone
+      ARGO_HOSTNAME: 'argodc.aadilraza.com'              # Hostname with domain FQDN eg: argocd.example.com.
 
       ## Web-App installation to EKS Cluster, bootstrap parameters.
       ##
-      WEBAPP_VERBOSE: ''             # Allowed values are 'install or uninstall' , Null (" ") to skip the process.
-      WEBAPP_HOSTNAME: ''            # Hostname with domain FQDN eg: web-app.example.com.
+      WEBAPP_VERBOSE: 'aadilraza.com'             # Allowed values are 'install or uninstall' , Null (" ") to skip the process.
+      WEBAPP_HOSTNAME: 'aadilraza.com'            # Hostname with domain FQDN eg: web-app.example.com.
 
       ## AWS Parameters
       AWS_DEFAULT_REGION: 'eu-west-1'  

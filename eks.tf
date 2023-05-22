@@ -14,7 +14,7 @@ module "eks" {
   manage_aws_auth = false
   enable_irsa     = true
   workers_group_defaults = {
-    instance_type        = "c5a.large"   #AMD based processor
+    instance_type        = "spot"   #AMD based processor
     subnets              = module.vpc.private_subnets
     asg_desired_capacity = 2
     asg_min_size         = 2

@@ -4,10 +4,10 @@ provider "aws" {
 
 terraform {
   backend "s3" {
-    bucket = "<replace-with-s3-bucket>"
+    bucket = "stack-test-339"
     key    = "eu-west-1/tfstate.json"
-    region = "eu-west-1"
-    dynamodb_table = "<replace-with-dynamodb-table>"
+    region = "ap-south-1"
+    dynamodb_table = "aws-test-table"
     encrypt = true
   }
 }

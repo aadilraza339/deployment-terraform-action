@@ -3,7 +3,7 @@
 #-----------------------------------------------------------------------------------------------------------
 
 variable "owner" {
-  default = "stackgenie"
+  default = "aadilraza"
 }
 
 variable "environment" {

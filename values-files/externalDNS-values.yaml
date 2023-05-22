@@ -1,5 +1,5 @@
 domainFilters:
-  - DOMAIN_NAME
+  - aadilraza.com
 serviceAccount:
   annotations:
     eks.amazonaws.com/role-arn: DNS_ARN
