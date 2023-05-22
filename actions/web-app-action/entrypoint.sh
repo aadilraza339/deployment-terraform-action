@@ -42,7 +42,7 @@ argocd repo add https://github.com/aadilraza339/auto-depoly.git --username ${USE
 
 argocd app create sample \
   --repo https://github.com/aadilraza339/auto-depoly.git \  #follow step 10 and replace the repo name here
-  --revision dev \                                                      #Replace with the branch name
+  --revision main \                                                      #Replace with the branch name
   --path . \
   --dest-namespace web-app \
   --dest-server https://kubernetes.default.svc
