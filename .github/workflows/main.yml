@@ -44,11 +44,9 @@ jobs:
       AWS_DEFAULT_REGION: 'eu-west-1'  
       AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY }}
       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_KEY }}
-      ASSUME_ROLES: ${{ secrets.ASSUME_ROLES }}
 
-      ## GITHUB TOKEN
-      API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
-      USER_GITHUB: ${{ secrets.USER_GITHUB }}
+      # ## GITHUB TOKEN
+     
 
     steps:
     ## Checkout the repository to the GitHub Actions runner
