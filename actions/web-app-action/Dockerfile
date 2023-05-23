@@ -1,6 +1,6 @@
 FROM alpine:latest
 
-COPY /tmp/entrypoint.sh /tmp/entrypoint.sh
+COPY entrypoint.sh /tmp/entrypoint.sh
 
 RUN apk add jq aws-cli bash curl openssl && \
   curl -fsSL "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl" -o /usr/local/bin/kubectl && \
@@ -10,5 +10,4 @@ RUN apk add jq aws-cli bash curl openssl && \
   chmod +x /usr/local/bin/kubectl /usr/local/bin/yq /usr/local/bin/argocd /tmp/entrypoint.sh
 
 ENTRYPOINT [ "/tmp/entrypoint.sh" ]
-
 
