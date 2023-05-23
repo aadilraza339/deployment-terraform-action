@@ -7,4 +7,8 @@ RUN apk add make jq aws-cli wget bash git && \
   unzip -qq /tmp/terraform_1.0.6_linux_amd64.zip -d /usr/bin && \
   chmod +x /tmp/entrypoint.sh
 
+RUN ["chmod", "+x", "/tmp/entrypoint.sh"]
+
+RUN echo $(ls -l /tmp/)
+
 ENTRYPOINT [ "/tmp/entrypoint.sh" ]
